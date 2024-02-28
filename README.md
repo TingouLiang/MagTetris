@@ -29,7 +29,7 @@ https://doi.org/10.1016/j.jmr.2023.107463.
 ## File List
 - `MagTetris.m` - the complete class definition of `MagTetris`
 - `MagTetris_main.m` - the scripts that contains examples for each `MagTetris` feature
-- `DrawMagnetization.m` - a function to visualize the magnetization of all the magnets in a permanent magnet array
+- `DrawMagnetization.m` - a function to visualize the magnets with their magnetization and the magnetic field on the observation plane
 
 For the usage of magnetic field/force calculation and other functions, please check `MagTetris_main.m` for the details. Each section is an individual demo for different features.
 ## Usage/Examples
@@ -183,13 +183,12 @@ end
 ```
 
 ### Step 6: Visualization of the magnetization
-A rough visualization of the magnetization can be performed using the function `DrawMagnetization`. The parameter `scale_factor` can be customized to adjust the length of the arrows in the plot. The output will be a figure as shown below:
+A visualization of the magnets can be performed using the function `DrawMagnetization`. The corresponding magnetizations will be drawn accordingly as well. The calculated magnetic field can be shown on the observation plane. The output will be a figure as shown below:
 ![Visualization](https://github.com/TingouLiang/MagTetris/blob/main/MagTetris%20Visualization.png?raw=true)
 
 ```matlab
 % Visualization of the magnetization
-scale_factor = 30;      % The length of the magnetization vector
-DrawMagnetization(loc_all_list,angle_all,scale_factor);
+DrawMagnetization(loc_all_list,angle_all,magnet_dim_all,FOV_1,FOV_2,FOV_3,surface,Bz);
 ```
 
 ### Step 7: A quick estimation of the weight of the PMA
